@@ -1,6 +1,14 @@
 plugins {
     id "org.sonarqube" version "3.4.0.2513"
+    id 'java'
 }
+
+group 'com.hj.platform'
+version '1.0-SNAPSHOT'
+
+
+sourceCompatibility = '11'
+targetCompatibility = '11'
 
 sonarqube {
     properties {
