@@ -33,4 +33,5 @@ jobs:
         env:
           GITHUB_TOKEN: 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
           SONAR_TOKEN: ae4c12e48e91bdc518a8fd839099199314674ec7
-        run: ./gradlew build sonarqube --info
+        run: pwd
+          - chmod +x ./gradlew  && ./gradlew build sonarqube --info
