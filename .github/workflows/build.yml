@@ -13,10 +13,10 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 0  # Shallow clones should be disabled for a better relevancy of analysis
-      - name: Set up JDK 17
+      - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
-          java-version: 17
+          java-version: 11
       - name: Cache SonarCloud packages
         uses: actions/cache@v1
         with:
@@ -31,6 +31,6 @@ jobs:
           restore-keys: ${{ runner.os }}-gradle
       - name: Build and analyze
         env:
-          GITHUB_TOKEN: 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  # Needed to get PR information, if any
-          SONAR_TOKEN: 109ba6b8d18b25988d575df67ca0ab85c4de5a03
+          GITHUB_TOKEN: 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
+          SONAR_TOKEN: ae4c12e48e91bdc518a8fd839099199314674ec7
         run: ./gradlew build sonarqube --info
